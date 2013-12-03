@@ -1,0 +1,24 @@
+{
+	"name": "static",
+	"description": "The base role for the Static Server",
+	"instance_role": "static",
+	"json_class": "Chef::Role",
+	"run_list": [
+		"recipe[yum]",
+		"recipe[git]",
+		"recipe[chef-solo-search]",
+		"recipe[nginx]",
+		"recipe[redis]",
+		"recipe[static::static]"
+	],
+	"default_attributes" : {
+		"dependencies" : [
+			"htop"
+		],
+		"supercircuits" : {
+            "media" : "/opt/static",
+            "hostname" : "localhost",
+            "port" : "80"
+		}
+	}
+}

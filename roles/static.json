@@ -8,17 +8,19 @@
 		"recipe[git]",
 		"recipe[chef-solo-search]",
 		"recipe[nginx]",
-		"recipe[redis]",
 		"recipe[static::static]"
 	],
 	"default_attributes" : {
 		"dependencies" : [
 			"htop"
 		],
-		"supercircuits" : {
+		"static" : {
             "media" : "/opt/static",
             "hostname" : "localhost",
             "port" : "80"
+		},
+		"nginx" : {
+			"default_site_enabled" : false
 		}
 	}
 }

@@ -1,3 +1,4 @@
+#!/bin/bash
 rpm -iv http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 yum install -y git
 curl -L http://www.opscode.com/chef/install.sh > /tmp/install.sh
@@ -13,7 +14,6 @@ knife cookbook site install yum
 knife cookbook site install git
 knife cookbook site install nginx
 knife cookbook site install chef-solo-search
-knife cookbook site install redis
 knife cookbook site install rsyslog
 knife cookbook site install cron
 knife cookbook site install logrotate

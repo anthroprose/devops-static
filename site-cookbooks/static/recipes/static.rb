@@ -8,5 +8,6 @@ template "/etc/nginx/sites-enabled/static.conf" do
     :server => node['static']['hostname'],
     :port => node['static']['port']
   )
+  notifies :restart, "service[nginx]"
 end
 

@@ -1,0 +1,4 @@
+devops-static
+=============
+
+devops-static
